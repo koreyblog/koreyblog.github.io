@@ -1,0 +1,733 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CSS,HTML," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="前段时间拜读了《精通CSS：高级Web标准解决方案》这本书，对CSS技术有了进一步的了解，这里摘录了一些我们平常容易疏忽的知识点。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《精通CSS：高级Web标准解决方案》读书笔记">
+<meta property="og:url" content="http://yoursite.com/2016/06/25/《精通CSS：高级Web标准解决方案》读书笔记/index.html">
+<meta property="og:site_name" content="Korey's Blog">
+<meta property="og:description" content="前段时间拜读了《精通CSS：高级Web标准解决方案》这本书，对CSS技术有了进一步的了解，这里摘录了一些我们平常容易疏忽的知识点。">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/579594-d15f7a41c21f4f88.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/579594-0678350f83307460.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/579594-c278ee95f47aacf9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/579594-9ff92c72f108c103.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/579594-7a7201fa2d264e0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2016-06-26T13:42:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《精通CSS：高级Web标准解决方案》读书笔记">
+<meta name="twitter:description" content="前段时间拜读了《精通CSS：高级Web标准解决方案》这本书，对CSS技术有了进一步的了解，这里摘录了一些我们平常容易疏忽的知识点。">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/579594-d15f7a41c21f4f88.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/06/25/《精通CSS：高级Web标准解决方案》读书笔记/"/>
+
+  <title> 《精通CSS：高级Web标准解决方案》读书笔记 | Korey's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?5195be18afbb74419b746e033a0fe0ea";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Korey's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Write less, do more.</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                《精通CSS：高级Web标准解决方案》读书笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-25T19:23:45+08:00" content="2016-06-25">
+              2016-06-25
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/25/《精通CSS：高级Web标准解决方案》读书笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/25/《精通CSS：高级Web标准解决方案》读书笔记/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>前段时间拜读了《精通CSS：高级Web标准解决方案》这本书，对CSS技术有了进一步的了解，这里摘录了一些我们平常容易疏忽的知识点。</p>
+<a id="more"></a>
+<h3 id="1-HTML微格式"><a href="#1-HTML微格式" class="headerlink" title="1.HTML微格式"></a>1.HTML微格式</h3><p>由于HTML中缺少相应的元素，很难突出显示人、地点或日期等类型的信息。为了解决这个问题，有一组开发人员决定开发一套标准的命名约定和标记模式来表示这些数据。这些命名约定基于vCard和iCalendar等现有的数据格式，现在成为<strong>微格式(microformat)</strong>。举例如下（代码采用hCard格式）：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"vcard"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"url fn"</span> <span class="attr">href</span>=<span class="string">"http://andybudd.com"</span>&gt;</span>Andy Budd<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"org"</span>&gt;</span>Clearleft Ltd<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"email"</span> <span class="attr">href</span>=<span class="string">"mailto:info@andybudd.com"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"adr"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"locality"</span>&gt;</span>Brighton<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"country-name"</span>&gt;</span>England<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>微格式让我们可以以一种特定的方式标记数据，让其他程序和服务可以访问它。<br>当前有9个正式的微格式，还有14个格式草案，包括：</p>
+<blockquote>
+<ul>
+<li>用于日期、日历和事件的hCalendar</li>
+<li>用于人和组织的hCard</li>
+<li>用于人之间关系的XFN</li>
+<li>用于产品说明的hProduct（草案）</li>
+<li>用于原料和烹调步骤的hPecipe（草案）</li>
+<li>用于产品和事件审查的hReview（草案）</li>
+<li>用于博客帖子等片段式内容的hAtom（草案）</li>
+</ul>
+</blockquote>
+<h3 id="2-html代码验证"><a href="#2-html代码验证" class="headerlink" title="2.html代码验证"></a>2.html代码验证</h3><p>W3C验证地址：<a href="http://validator.w3.org/" target="_blank" rel="external">http://validator.w3.org/</a><br>也可以使用游览器书签的方法，验证器bookmarklet，这是一小段JavaScript代码；<br>也可以使用游览器插件。</p>
+<h3 id="3-伪类的连接"><a href="#3-伪类的连接" class="headerlink" title="3.伪类的连接"></a>3.伪类的连接</h3><p>通过把伪类连接在一起，可以创建更复杂的行为，比如在已访问链接的未访问链接上实现不同的鼠标悬停效果：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span><span class="selector-pseudo">:hover</span> &#123; <span class="attribute">color</span>:olive;&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-子选择器和相邻同胞选择器在IE7中的小bug"><a href="#4-子选择器和相邻同胞选择器在IE7中的小bug" class="headerlink" title="4.子选择器和相邻同胞选择器在IE7中的小bug"></a>4.子选择器和相邻同胞选择器在IE7中的小bug</h3><p>在IE7中，如果父元素和子元素之间有HTML注释，就会出问题。</p>
+<h3 id="5-注释技巧"><a href="#5-注释技巧" class="headerlink" title="5.注释技巧"></a>5.注释技巧</h3><p>当文件内容过长，寻找特定内容会很困难。一种改进方法是在每个注释头中添加一个<strong>标志</strong>。这个标志仅仅是头文本前面的一个额外字符，一般不会出现在文件中。搜索这个标志和注释头中的前几个字母，就可以立即找到要寻找的文件部分。所以，在实例中，搜索 “@group” 就会立即找到文件中的相关部分。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* @group typography */</span><br></pre></td></tr></table></figure></p>
+<h3 id="6-删除注释"><a href="#6-删除注释" class="headerlink" title="6.删除注释"></a>6.删除注释</h3><p>注释会使CSS文件显著加大。因此，你可能需要从样式表中去掉一些注释。可以使用一些在线的CSS优化器，不但能够删除注释，还可以删除空白，这可以从代码中去掉额外的字节。<br>减小文件大小的最好方法可能是启用服务器压缩。如果使用Apache服务器，那么应该安装<strong>mod_gzip</strong>或<strong>mod_deflate</strong>。所有现代游览器都可以处理用GZIP压缩的文件并进行即时解压。这能够将HTML和CSS文件减小大约80%，这可以减少对带宽的占用，大大加快页面的下载速度。</p>
+<h3 id="7-CSS2-1的outline属性"><a href="#7-CSS2-1的outline属性" class="headerlink" title="7.CSS2.1的outline属性"></a>7.CSS2.1的outline属性</h3><p>CSS2.1包含<code>outline</code> 属性。与<code>border</code> 属性不同，轮廓绘制在元素框之上，所以他们不影响元素的大小或定位。因此，轮廓有助于修复bug，因为它们不影响页面的布局，大多数现代游览器（包括IE8）支持轮廓，但是IE7和更低版本不支持轮廓。</p>
+<h3 id="8-外边距叠加"><a href="#8-外边距叠加" class="headerlink" title="8.外边距叠加"></a>8.外边距叠加</h3><p>当两个或更多垂直外边距相遇时，它们将形成一个外边框。这个外边框的高度等于两个发生叠加的外边距的高度中的较大者。<br>1.当一个元素出现在另一个元素上面时，第一个元素的底外边距与第二个元素的顶外边距发生叠加。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/579594-d15f7a41c21f4f88.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="情况1"></p>
+<p>2.当一个元素包含在另一个元素中时（假设没有内边距或边框将外边距分隔开），他们的顶或底外边距也会发生叠加。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/579594-0678350f83307460.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="情况2"></p>
+<p>3.外边距本身也会发生叠加。假如有一个空元素，他有外边距，但是没有边框或内边距。在这种情况下，顶外边距和底外边距就碰到了一起，它们会发生叠加。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/579594-c278ee95f47aacf9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="情况3"></p>
+<p>4.如果<em>情况3</em>的外边距碰到另一个元素的外边距，它还会发生叠加。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/579594-9ff92c72f108c103.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="情况4"></p>
+<p><em>只有在普通文档流中块框的垂直外边距才会发生外边距叠加。行内框、浮动框或绝对定位框之间的外边距不会叠加。</em></p>
+<h3 id="9-可视化格式模型"><a href="#9-可视化格式模型" class="headerlink" title="9.可视化格式模型"></a>9.可视化格式模型</h3><p>CSS中有3中基本的定位机制：普通流、浮动和绝对定位。除非专门指定，否则所有框都在普通流中定位。顾名思义，普通流中元素框的位置由元素在HTML中的位置决定。</p>
+<ol>
+<li><p>普通流：<br>块级框从上到下一个接一个地垂直排列，框之间的垂直距离由框的垂直外边距计算出来。<br>行内框在一行中水平排列。可以使用水平内边距、边框和外边距调整它们的水平间距。但是，垂直内边距、边框和外边距不影响行内框的高度。同样，在行内框上设置显式的高度或者宽度也没有影响。由一行形成的水平框称为 <em>行框</em>，行框的高度总是足以容纳它包含的所有行内框。但是，设置行高可以增加这个框的高度。因此，修改行内框尺寸的唯一方法是修改行高或者水平边框、内边框或外边距。</p>
+</li>
+<li><p>相对定位：<br>如果对一个元素进行相对定位，它将出现它所在的位置上。然后，可以通过设置垂直或水平位置，让这个元素“相对于”它的起点移动。<br>在使用相对定位时，无论是否移动，元素仍然占据原来的空间。因此，移动元素会导致它覆盖其他框。</p>
+</li>
+<li><p>绝对定位：<br>相对定位实际上被看做普通流定位模型的一部分，因为元素的位置是相对于它在普通流中的位置的。与之相反，绝对定位使元素的位置与文档流无关，因此不占据空间。普通文档流中其他元素的布局就像绝对定位元素不存在一样。<br>因为绝对定位与文档流无关，所以它们可以覆盖页面上的其他元素。可以通过设置<code>z-index</code> 属性来控制这些框的叠放次序。<code>z-index</code> 值越高，框在栈中的位置就越高。</p>
+</li>
+<li><p>固定定位：<br>固定定位是绝对定位的一种。差异在于固定元素的包含块是视口（<code>viewport</code>）。这使我们能够创建总是出现在窗口中相同位置的浮动元素。</p>
+</li>
+<li><p>浮动：</p>
+</li>
+</ol>
+<h3 id="10-背景图像效果"><a href="#10-背景图像效果" class="headerlink" title="10.背景图像效果"></a>10.背景图像效果</h3><p>设置背景图像位置时，可以使用像素数，也可以使用百分数。百分数定位并不对背景图像的左上角进行定位，而是使用图像上的一个对应点。如果指定垂直和水平位置都是20%，那么实际上是在将图像上距离左上角20%的点定位到父元素上距离左上角20%的位置，如图：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/579594-7a7201fa2d264e0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="背景图像的定位"></p>
+<ol>
+<li>圆角框–滑动门技术(sliding doors technique)</li>
+<li>圆角框–山顶角(mountaintop corner)</li>
+</ol>
+<h3 id="11-CSS缩放视差效果"><a href="#11-CSS缩放视差效果" class="headerlink" title="11.CSS缩放视差效果"></a>11.CSS缩放视差效果</h3><p>利用多层背景图像百分比定位。</p>
+<h3 id="12-为目标链接设置样式"><a href="#12-为目标链接设置样式" class="headerlink" title="12.为目标链接设置样式"></a>12.为目标链接设置样式</h3><p>除了链接到特定的文档之外，还可以使用包含片段标识符的链接链接到页面的特性部分，实现的方式实在 href 的末尾加上一个 <em>＃</em> 字符，然后加上要链接的元素ID。<br>该跳转到的元素可以设置样式，以便于看到跳转的位置。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.comment</span><span class="selector-pseudo">:target</span> &#123; <span class="attribute">background</span>: red;&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="13-使用a标签制作按钮时注意点"><a href="#13-使用a标签制作按钮时注意点" class="headerlink" title="13.使用a标签制作按钮时注意点"></a>13.使用a标签制作按钮时注意点</h3><p>如果使用这种技术，那么要确保元素是真正的链接，而不是更新服务器。否则，可能会出现意外的结果。在Google加速程序启动时，人们发现CMS或Web应用程序中的内容神秘地消失了。有时候，站点的全部内容在一夜之间就消失了。这是因为这些工具的开发人员使用锚链接而不是用表单元素作为删除按钮。Google加速程序会访问这些链接以便缓存它们，这样就会无意间删除内容！搜索引擎的spider可以造成相同的结果，递归地删除大量数据。因此，决不要使用链接更新服务器。或者用技术术语来说，链接应该只用于GET请求，决不要用于POST请求。</p>
+<h3 id="14-表格特有的元素"><a href="#14-表格特有的元素" class="headerlink" title="14.表格特有的元素"></a>14.表格特有的元素</h3><p><code>caption</code>：它基本上用作表格的标题<br><code>summary</code>：可以用于表格标签，用来描述表格的内容，与图像的alt文本相似，summary应该总结表格中的数据。</p>
+<h3 id="15-表格盒模型"><a href="#15-表格盒模型" class="headerlink" title="15.表格盒模型"></a>15.表格盒模型</h3><p>CSS规范有两个表格边框模型：单独的和叠加的。<br>在单独模型中，在各个单元格周围有边框，而在叠加模型中，单元格共享边框。大多数浏览器默认采用单独模型，但是我个人认为叠加模型更有用。因此，通常要做的一件事就是将表格的<code>border-collapse</code> 属性设置为<code>collapse</code>。</p>
+<h3 id="16-流式布局"><a href="#16-流式布局" class="headerlink" title="16.流式布局"></a>16.流式布局</h3><p>在使用流式布局时，尺寸是用百分数而不是像素设置的。这使流式布局能够相对于游览器窗口进行伸缩。随着游览器窗口变大，列也会变宽。相反，随着窗口变小，列的宽度也减小。流式布局可以非常高效地使用空间。最好的流式布局甚至不会引起用户的注意。<br>但是，流式布局也不是没有问题的。在窗口宽度较小的时候，行变得非常窄，很难阅读。在多列布局中尤其如此。因此，有必要添加以像素或<strong>em</strong>为单位的<code>min-width</code>，从而防止布局变得太窄。但是，如果<code>min-width</code>设置得太大，流式设计也会遇到与固定宽度布局相似的限制。<br>与之相反，如果设计横跨游览器窗口整个，那么行就变得太长，也很难阅读。可以采取几个措施避免这个问题。首先，不要横跨游览器而是让容器之跨越宽度的一部分，比如85%。还可以考虑用百分数设置外边距和内边距。这样的话，内边距和外边距的宽度将会随着窗口尺寸而变，可以防止列太快地变得过宽。最后，对于非常严重的情况，也可以选择为容器设置最大宽度，以防止内容在大显示器上变得过宽。</p>
+<h3 id="17-弹性布局"><a href="#17-弹性布局" class="headerlink" title="17.弹性布局"></a>17.弹性布局</h3><p>虽然流式布局可以充分利用可用空间，但是在大分辨率显示器上，行仍然会过长，让用户不舒服。相反，在窄窗口中或者增加文本字号时，行会变得非常短，内容很零碎。对于这个问题，弹性布局可能是一种解决方案。<br>弹性布局相对于字号（而不是游览器宽度）来设置元素的宽度。以<em>em</em>为单位设置宽度，可以确保在字号增加时整个布局随之扩大。这可以将行长保持在可阅读的范围，对于视力弱或有认知障碍的人尤其有用。<br>与其他布局技术一样，弹性布局也有自己的问题。弹性布局的一些问题与固定宽度布局相同，比如不能充分利用可用空间。另外，因为字号增加时整个布局会加大，所以弹性布局会变得比游览器窗口宽，导致水平滚动条出现。为了防止这种情况，可能需要在容器div上添加100%的<code>max-width</code>。IE6和更低版本不支持<code>max-width</code>，但是较新的版本都支持它。如果要在IE6中支持<code>max-width</code>，可以使用JavaScript。</p>
+<h3 id="18-hasLayout"><a href="#18-hasLayout" class="headerlink" title="18.hasLayout"></a>18.hasLayout</h3><p>IE游览器bug多问题的原因之一是，显示引擎使用一个称为<em>布局（hasLayout）</em>的内部概念。布局问题是许多IE/Win显示bug的根源，所以理解这个概念以及它如何影响CSS是有帮助的。<br>Windows上的IE使用布局概念来控制元素的尺寸和定位。那些<em>“拥有布局”</em>的元素负责本身及其子元素的尺寸设置和定位。如果一个元素“没有拥有不布局”，那么它的尺寸和位置由最近的拥有布局的祖先元素控制。</p>
+<blockquote>
+<p>在默认情况下拥有布局的元素包括</p>
+<ul>
+<li>body</li>
+<li>html(标准模式中)</li>
+<li>table</li>
+<li>tr、td</li>
+<li>img</li>
+<li>hr</li>
+<li>input、select、textarea、button</li>
+<li>iframe、embed、object、applet</li>
+<li>marguee</li>
+</ul>
+</blockquote>
+<p>布局概念是Windows上的IE特有的，而且它不是CSS属性。尽管设置某些CSS属性会使元素拥有布局，但是在CSS中无法显示地设置布局。可以使用JavaScript函数 <strong>hasLayout</strong>查看一个元素是否拥有布局。如果元素拥有布局，这个函数就返回<em>ture</em>，否则返回<em>false</em>。hasLayout是一个只读属性，所以无法使用JavaScript进行设置。</p>
+<blockquote>
+<p>设置以下CSS属性会自动地使元素拥有布局</p>
+<ul>
+<li>float: left 或 right</li>
+<li>display: inline-block</li>
+<li>width: 任何值</li>
+<li>height: 任何值</li>
+<li>zoom: 任何值(Microsoft属性-不能通过检验)</li>
+<li>writing-mode: tb-rl(Microsoft属性-不能通过检验)</li>
+</ul>
+<p>在IE7中，以下属性也成了布局触发器</p>
+<ul>
+<li>overflow: hidden、scroll 或 auto</li>
+<li>min-width: 任何值</li>
+<li>max-width: 除none之外的任何值</li>
+</ul>
+</blockquote>
+<p>布局会出现的问题</p>
+<blockquote>
+<ul>
+<li>拥有布局的元素不会收缩</li>
+<li>布局元素对浮动进行自动清理</li>
+<li>相对定位的元素没有布局</li>
+<li>在拥有布局的元素之间外边距不叠加</li>
+<li>在没有布局的块级链接上，单击区域只覆盖文本</li>
+<li>在滚动时，列表项上的背景图像间歇性的显示和消失</li>
+</ul>
+</blockquote>
+<h3 id="19-兼容性修复的方法"><a href="#19-兼容性修复的方法" class="headerlink" title="19.兼容性修复的方法"></a>19.兼容性修复的方法</h3><ol>
+<li><p>IE条件注释<br>条件注释是一种专有的对常规HTML注释的Microsoft扩展。条件注释在其他所有游览器看来是常规注释，因此本质上是无害的。因此条件注释通常被看做处理IE特有的bug的最好的方法。条件注释在Windows上的IE5中首次出现，并且得到了Windows游览器的所有后续版本的支持。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//将特定的样式表提供给IE5和更高的所有版本，那么可以在HTML文档的开头放置以下代码</span><br><span class="line"><span class="comment">&lt;!-- [if IE]</span><br><span class="line">   &lt;link red="stylesheet" type="text/css" href="/css/ie.css"&gt;</span><br><span class="line">--&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//将特定的样式表提供给IE6</span><br><span class="line"><span class="comment">&lt;!-- [if IE 6]</span><br><span class="line">   &lt;link red="stylesheet" type="text/css" href="/css/ie.css"&gt;</span><br><span class="line">--&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">​``` HTML</span><br><span class="line">//将特定的样式表提供给一组游览器，比如IE5和IE5.5</span><br><span class="line">&lt;!-- [if lt IE 6]</span><br><span class="line">  &lt;link red=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/css/ie.css&quot;&gt;</span><br><span class="line">--&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>IE for Mac 带通过滤器</p>
+</li>
+<li><p>应用星号 HTML hack<br>最著名、最有用的CSS过滤器之一是星号HTML hack。这个过滤器非常容易记住，它针对IE6和更低版本。正如你知道的，HTML元素被认为是网页上的第一个元素（即根元素）。但是，IE的老版本有一个匿名的根元素，它包围着HTML元素，可以使用通用选择器指定包围在另一个元素中的HTML元素。因为这种情况只在IE6和更低版本中出现，所以可以将特定的规则应用于这些游览器。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;code&gt;* html &#123;</span><br><span class="line">  width: 1px;</span><br><span class="line">&#125;&lt;/code&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>应用于子选择器的hack<br>如果希望创建会被IE的老版本忽略的规则，不需要显式地指定这些游览器。可以使用子选择器hack。这种技术实际上不是hack，他只是使用了IE老版本不理解而现代游览器能够理解的选择器。<br>在这个示例中，使用子选择器hack对Windows上的IE6和IE6隐藏透明的背景PNG图像。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>&gt;<span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-image</span>: <span class="built_in">url</span>(bg.png);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="20-常见bug及其修复方法"><a href="#20-常见bug及其修复方法" class="headerlink" title="20.常见bug及其修复方法"></a>20.常见bug及其修复方法</h3><ol>
+<li>双外边距浮动bug</li>
+<li>3像素文本偏移bug</li>
+<li>IE6的重复字符bug</li>
+<li>IE6的“藏猫猫”bug</li>
+<li>相对容器中的绝对定位</li>
+</ol>
+<h3 id="21-text-overflow"><a href="#21-text-overflow" class="headerlink" title="21.text-overflow"></a>21.text-overflow</h3><p>如果文本太长，在包含它的元素中放不下，text-overflow会裁断它。使用ellipsis值在被截断的文本后面加上省略号（…）。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag">#CSS</a>
+          
+            <a href="/tags/HTML/" rel="tag">#HTML</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/25/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/25/《精通CSS：高级Web标准解决方案》读书笔记/"
+           data-title="《精通CSS：高级Web标准解决方案》读书笔记" data-url="http://yoursite.com/2016/06/25/《精通CSS：高级Web标准解决方案》读书笔记/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Korey Han" />
+          <p class="site-author-name" itemprop="name">Korey Han</p>
+          <p class="site-description motion-element" itemprop="description">blog,html,css,js</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-HTML微格式"><span class="nav-number">1.</span> <span class="nav-text">1.HTML微格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-html代码验证"><span class="nav-number">2.</span> <span class="nav-text">2.html代码验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-伪类的连接"><span class="nav-number">3.</span> <span class="nav-text">3.伪类的连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-子选择器和相邻同胞选择器在IE7中的小bug"><span class="nav-number">4.</span> <span class="nav-text">4.子选择器和相邻同胞选择器在IE7中的小bug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-注释技巧"><span class="nav-number">5.</span> <span class="nav-text">5.注释技巧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-删除注释"><span class="nav-number">6.</span> <span class="nav-text">6.删除注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-CSS2-1的outline属性"><span class="nav-number">7.</span> <span class="nav-text">7.CSS2.1的outline属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-外边距叠加"><span class="nav-number">8.</span> <span class="nav-text">8.外边距叠加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-可视化格式模型"><span class="nav-number">9.</span> <span class="nav-text">9.可视化格式模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-背景图像效果"><span class="nav-number">10.</span> <span class="nav-text">10.背景图像效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-CSS缩放视差效果"><span class="nav-number">11.</span> <span class="nav-text">11.CSS缩放视差效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-为目标链接设置样式"><span class="nav-number">12.</span> <span class="nav-text">12.为目标链接设置样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-使用a标签制作按钮时注意点"><span class="nav-number">13.</span> <span class="nav-text">13.使用a标签制作按钮时注意点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-表格特有的元素"><span class="nav-number">14.</span> <span class="nav-text">14.表格特有的元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-表格盒模型"><span class="nav-number">15.</span> <span class="nav-text">15.表格盒模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16-流式布局"><span class="nav-number">16.</span> <span class="nav-text">16.流式布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17-弹性布局"><span class="nav-number">17.</span> <span class="nav-text">17.弹性布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18-hasLayout"><span class="nav-number">18.</span> <span class="nav-text">18.hasLayout</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19-兼容性修复的方法"><span class="nav-number">19.</span> <span class="nav-text">19.兼容性修复的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20-常见bug及其修复方法"><span class="nav-number">20.</span> <span class="nav-text">20.常见bug及其修复方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#21-text-overflow"><span class="nav-number">21.</span> <span class="nav-text">21.text-overflow</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Korey Han</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"korey"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
